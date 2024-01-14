@@ -4,12 +4,12 @@ say = 0
 toplam = 0
 
 for al in B:
-    print(f"{a + 1}. Elemanı Gir: ", end="")
-    B[a] = int(input())
+    girilen_sayi = int(input(f"{a + 1}. Elemanı Gir: "))
+    B[a] = girilen_sayi
 
-    if B[a] % 10 == 0:
+    if girilen_sayi % 10 == 0:
         say += 1
-        toplam += B[a]  # Sadece son rakamı sıfır olan sayıların toplamını hesapla
+        toplam += girilen_sayi  # Sadece son rakamı sıfır olan sayıların toplamını hesapla
 
     a += 1
 
