@@ -1,3 +1,5 @@
+import random
+
 isim = input("İsmi Giriniz: ")
 
 karakterler = list(isim)  # String'i karakter listesine çevirme
@@ -15,5 +17,5 @@ for a in range(len(karakterler)):
     D[sayi] = True
     print(karakterler[sayi], end="")
 
-print("\n\n\nPress any key to continue . . . ")
+print("\n\nDevam etmek için bir tuşa basın . . . ")
 input()
