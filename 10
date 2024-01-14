@@ -1,0 +1,30 @@
+using System;
+
+namespace or096
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            double[] a = { 150, 600, 700, 450, 850, 275, 950, 1500, 210, 368 };
+
+            foreach (double d in a)
+            {
+                if (d >= 500)
+                {
+                    // Burs miktarı 500 ve üzeri olanlara artış yapılmıyor!
+                    Console.WriteLine(d);
+                    continue; // Döngünün aşağıdaki satırları çalışmadan yeni çevrime gider!
+                }
+
+                d = (d * 0.1) + d;
+                d = d + 50;
+
+                Console.WriteLine(d);
+            }
+
+            Console.Write("DEVAM ETMEK İÇİN BİR TUŞA BASINIZ. . . ");
+            Console.ReadKey(true);
+        }
+    }
+}
