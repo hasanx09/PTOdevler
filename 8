@@ -1,12 +1,12 @@
-b = int(input("Bir sayı girin: "))
-s = "Sayı Asal Sayı"
+sayi = int(input("Bir sayı girin: "))
+durum = "Sayı Asal Sayı"
 
-if b == 1:
+if sayi == 1:
     print("ASAL DEĞİL!")
 else:
-    for a in range(2, b // 2 + 1):
-        if b % a == 0:
-            s = "Sayısı Asal Sayı Değil!"
+    for i in range(2, sayi // 2 + 1):
+        if sayi % i == 0:
+            durum = "Sayı Asal Sayı Değil!"
             break
 
-    print(s)
+    print(durum)
