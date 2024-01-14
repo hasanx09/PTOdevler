@@ -1,32 +1,33 @@
 using System;
 
-class Program
+class AnaProgram
 {
     static void Main()
     {
-        Console.Write("Birinci sayıyı girin: ");
-        int sayı = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Birinci değeri girin: ");
+        int deger1 = Convert.ToInt32(Console.ReadLine());
 
-        Console.Write("İkinci sayıyı girin: ");
-        int sayı2 = Convert.ToInt32(Console.ReadLine());
+        Console.Write("İkinci değeri girin: ");
+        int deger2 = Convert.ToInt32(Console.ReadLine());
 
-        Console.Write("Tek sayıları mı Çift sayıları mı toplamak istersin: ");
-        string seçim = Console.ReadLine().ToUpper();
+        Console.Write("Tek değerleri mi Çift değerleri mi toplamak istersin: ");
+        string secim = Console.ReadLine().ToUpper();
 
         int toplam = 0;
 
-        for (int a = sayı; a <= sayı2; a++)
+        for (int a = deger1; a <= deger2; a++)
         {
-            if (seçim == "TEK" && a % 2 != 0)
+            if (secim == "TEK" && a % 2 != 0)
             {
                 toplam += a;
             }
-            else if (seçim == "ÇİFT" && a % 2 == 0)
+            else if (secim == "ÇİFT" && a % 2 == 0)
             {
                 toplam += a;
             }
         }
-        Console.WriteLine($"{sayı} ile {sayı2} arasındaki {seçim} sayıların toplamı: {toplam}");
+
+        Console.WriteLine($"{deger1} ile {deger2} arasındaki {secim} değerlerin toplamı: {toplam}");
         Console.ReadLine();
     }
 }
