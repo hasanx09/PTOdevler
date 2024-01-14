@@ -1,6 +1,6 @@
 using System;
 
-namespace or220
+namespace Or220
 {
     class Program
     {
@@ -31,7 +31,7 @@ namespace or220
             }
 
             Console.WriteLine("İlk Sayıya En Yakın Sayı = " + B[closestIndex]);
-            Console.Write("Press any key to continue . . . ");
+            Console.Write("Devam etmek için bir tuşa basın . . . ");
             Console.ReadKey(true);
         }
     }
