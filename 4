@@ -1,0 +1,32 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Birinci sayıyı girin: ");
+        int sayı = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("İkinci sayıyı girin: ");
+        int sayı2 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Tek sayıları mı Çift sayıları mı toplamak istersin: ");
+        string seçim = Console.ReadLine().ToUpper();
+
+        int toplam = 0;
+
+        for (int a = sayı; a <= sayı2; a++)
+        {
+            if (seçim == "TEK" && a % 2 != 0)
+            {
+                toplam += a;
+            }
+            else if (seçim == "ÇİFT" && a % 2 == 0)
+            {
+                toplam += a;
+            }
+        }
+        Console.WriteLine($"{sayı} ile {sayı2} arasındaki {seçim} sayıların toplamı: {toplam}");
+        Console.ReadLine();
+    }
+}
