@@ -8,11 +8,11 @@ try:
     a = int(input("Bir Sayı Giriniz (1-999): "))
     if 1 <= a <= 999:
         if a // 100 > 0:
-            s = Yuzler[a // 100]
+            s = Yuzler[a // 100] + " "
             a %= 100
 
         if a // 10 > 0:
-            s += Onlar[a // 10 - 1]
+            s += Onlar[a // 10 - 1] + " "
             a %= 10
 
         if a > 0:
