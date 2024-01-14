@@ -1,12 +1,12 @@
-ikili_sayi = input("Bir ikili sayı girin: ")
+binary_sayi = input("Bir ikili sayı girin: ")
 
-ondalik_deger = 0
+decimal_deger = 0
 taban_deger = 1
 
-for i in range(len(ikili_sayi) - 1, -1, -1):
-    if ikili_sayi[i] == '1':
-        ondalik_deger += taban_deger
+for i in range(len(binary_sayi) - 1, -1, -1):
+    if binary_sayi[i] == '1':
+        decimal_deger += taban_deger
     taban_deger *= 2
 
-print("Girilen Binary Sayı:", ikili_sayi)
-print("Decimal Sayı:", ondalik_deger)
+print("Girilen İkili Sayı:", binary_sayi)
+print("Onluk Sayı:", decimal_deger)
