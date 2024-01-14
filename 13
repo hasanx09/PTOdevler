@@ -4,11 +4,12 @@ for i in range(len(A) - 1):
     enbuyuk = i
 
     for j in range(i + 1, len(A)):
-        if A[j] > A[en_buyuk_yer]:
+        if A[j] > A[enbuyuk]:
             enbuyuk = j
 
     A[i], A[enbuyuk] = A[enbuyuk], A[i]
 
-    print(A[i])
+for eleman in A:
+    print(eleman)
 
 input("Devam etmek için bir tuşa basın...")
