@@ -1,31 +1,29 @@
 using System;
 
-class Program
+class AnaProgram
 {
     static void Main()
     {
-
         int toplam = 0;
-        int girilenSayi;
+        int girilenDeger;
 
         while (true)
         {
-            Console.Write("Sayı girin: ");
+            Console.Write("Değer girin: ");
             string girilenMetin = Console.ReadLine();
 
-            if (int.TryParse(girilenMetin, out girilenSayi))
+            if (int.TryParse(girilenMetin, out girilenDeger))
             {
-                toplam += girilenSayi;
+                toplam += girilenDeger;
             }
-           
-            if (girilenSayi == 83)
-            {
 
+            if (girilenDeger == 83)
+            {
                 break;
             }
         }
 
-        Console.WriteLine($"Girilen sayıların toplamı: {toplam-83}");
+        Console.WriteLine($"Girilen değerlerin toplamı: {toplam - 83}");
         Console.ReadLine();
     }
 }
