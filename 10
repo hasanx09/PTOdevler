@@ -1,26 +1,25 @@
 using System;
 
-namespace or096
+namespace Or096
 {
     class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            double[] a = { 150, 600, 700, 450, 850, 275, 950, 1500, 210, 368 };
+            double[] burslar = { 150, 600, 700, 450, 850, 275, 950, 1500, 210, 368 };
 
-            foreach (double d in a)
+            foreach (double burs in burslar)
             {
-                if (d >= 500)
+                if (burs >= 500)
                 {
-                    // Burs miktarı 500 ve üzeri olanlara artış yapılmıyor!
-                    Console.WriteLine(d);
-                    continue; // Döngünün aşağıdaki satırları çalışmadan yeni çevrime gider!
+                    Console.WriteLine(burs);
+                    continue; // Burs miktarı 500 ve üzeri olanlar için artış yapılmıyor, bir sonraki öğrenciye geçiliyor.
                 }
 
-                d = (d * 0.1) + d;
-                d = d + 50;
+                double yeniBurs = (burs * 0.1) + burs;
+                yeniBurs += 50;
 
-                Console.WriteLine(d);
+                Console.WriteLine(yeniBurs);
             }
 
             Console.Write("DEVAM ETMEK İÇİN BİR TUŞA BASINIZ. . . ");
