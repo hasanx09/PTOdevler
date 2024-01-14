@@ -5,11 +5,11 @@ maxGrade = max(B)
 minGrade = min(B)
 
 print("En Yüksek Notu Alan Kişi/Kişiler:")
-for i in range(len(B)):
-    if B[i] == maxGrade:
-        print(A[i])
+for index, grade in enumerate(B):
+    if grade == maxGrade:
+        print(A[index])
 
 print("\nEn Düşük Notu Alan Kişi/Kişiler:")
-for j in range(len(B)):
-    if B[j] == minGrade:
-        print(A[j])
+for index, grade in enumerate(B):
+    if grade == minGrade:
+        print(A[index])
