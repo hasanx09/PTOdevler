@@ -1,31 +1,57 @@
-def ana_program():
-    arac_tipi = input("Araç tipini seçin (Otomobil/O, Kamyon/K, İş Makinası/I): ").upper()
+using System;
 
-    park_suresi = int(input("\n\nPark süresini saat cinsinden girin: "))
-    
-    toplam_tutar = hesapla_tutar(arac_tipi, park_suresi)
+class Otopark
+{
+    static void Main()
+    {
+        Console.Write("Araç tipini girin (otomobil, kamyonet, vb.): ");
+        string aracTipi = Console.ReadLine();
 
-    print(f"\n\nToplam çıkış tutarı: {toplam_tutar} TL")
+        Console.Write("Araç park süresini saat cinsinden girin: ");
+        int parkSuresi = int.Parse(Console.ReadLine());
 
-if __name__ == "__main__":
-    ana_program()
+        int ucret = HesaplaUcret(aracTipi, parkSuresi);
 
-def hesapla_tutar(arac_tipi, park_suresi):
-    toplam_tutar = 0
+        Console.WriteLine("Ödemeniz gereken ücret: " + ucret + "₺");
+    }
 
-    if park_suresi <= 2:
-        if arac_tipi == 'O':
-            toplam_tutar = 5
-        elif arac_tipi == 'K':
-            toplam_tutar = 8
-        elif arac_tipi == 'I':
-            toplam_tutar = 12
-    else:
-        if arac_tipi == 'O':
-            toplam_tutar = 5 + (park_suresi - 2) / 10 * 1
-        elif arac_tipi == 'K':
-            toplam_tutar = 8 + (park_suresi - 2) / 10 * 2
-        elif arac_tipi == 'I':
-            toplam_tutar = 12 + (park_suresi - 2) / 8 * 3
+    static int HesaplaUcret(string aracTipi, int parkSuresi)
+    {
+        const int ilk2SaatUcret = 5;
+        const int sonrakiSaatBasinaUcret = 1;
+        const int maksimumGunUcret = 13;
 
-    return toplam_tutar
+        int toplamUcret = 0;
+
+        if (parkSuresi <= 2)
+        {
+            toplamUcret = ilk2SaatUcret;
+        }
+        else if (parkSuresi <= 10)
+        {
+            toplamUcret = ilk2SaatUcret + (parkSuresi - 2) * sonrakiSaatBasinaUcret;
+        }
+        else
+        {
+            int tamGunSayisi = parkSuresi / 24;
+            int kalanSaat = parkSuresi % 24;
+
+            toplamUcret = tamGunSayisi * maksimumGunUcret;
+
+            if (kalanSaat <= 2)
+            {
+                toplamUcret += ilk2SaatUcret;
+            }
+            else if (kalanSaat <= 10)
+            {
+                toplamUcret += ilk2SaatUcret + (kalanSaat - 2) * sonrakiSaatBasinaUcret;
+            }
+            else
+            {
+                toplamUcret += ilk2SaatUcret + 8 * sonrakiSaatBasinaUcret + maksimumGunUcret;
+            }
+        }
+
+        return toplamUcret;
+    }
+}
