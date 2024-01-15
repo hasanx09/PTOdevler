@@ -13,9 +13,12 @@ class AnaProgram
         Console.Write("Tek değerleri mi Çift değerleri mi toplamak istersin: ");
         string secim = Console.ReadLine().ToUpper();
 
+        int baslangic = Math.Min(deger1, deger2);
+        int bitis = Math.Max(deger1, deger2);
+
         int toplam = 0;
 
-        for (int a = deger1; a <= deger2; a++)
+        for (int a = baslangic; a <= bitis; a++)
         {
             if (secim == "TEK" && a % 2 != 0)
             {
