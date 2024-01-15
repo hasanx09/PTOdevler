@@ -38,17 +38,20 @@ class Otopark
 
             toplamUcret = tamGunSayisi * maksimumGunUcret;
 
-            if (kalanSaat <= 2)
+            for (int i = 0; i < kalanSaat; i++)
             {
-                toplamUcret += ilk2SaatUcret;
-            }
-            else if (kalanSaat <= 10)
-            {
-                toplamUcret += ilk2SaatUcret + (kalanSaat - 2) * sonrakiSaatBasinaUcret;
-            }
-            else
-            {
-                toplamUcret += ilk2SaatUcret + 8 * sonrakiSaatBasinaUcret + maksimumGunUcret;
+                if (i < 2)
+                {
+                    toplamUcret += ilk2SaatUcret;
+                }
+                else if (i < 10)
+                {
+                    toplamUcret += sonrakiSaatBasinaUcret;
+                }
+                else
+                {
+                    toplamUcret += maksimumGunUcret;
+                }
             }
         }
 
